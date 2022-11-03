@@ -6,51 +6,78 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PassengerTest {
-    Passenger myPassenger;
+    Passenger title;
+    Passenger id;
+    Passenger age;
+    Passenger num;
+    Passenger name;
+
 
     @BeforeEach
     void setUp(){
-        myPassenger = new Passenger("Mr", "Lokesh", "0892448588", 20, "G0038350700");
+        title = new Passenger();
+        id = new Passenger();
+        age = new Passenger();
+        num = new Passenger();
+        name = new Passenger();
+
     }
 
     @Test
     void testName(){
-        assertEquals("Lokesh", myPassenger.Name());
+        assertEquals("Lokesh", name.Name("Lokesh"));
      }
 
-    @Test
-    void testTitleMr(){
-        assertEquals("Mr", myPassenger.title());
-    }
+     @Test
+    void testNameFail(){
+        Exception msgName = assertThrows(IllegalArgumentException.class, () -> {name.Name("x");});
+        assertEquals("whose name is less 3 characters long.....you have a default name", msgName.getMessage());
+     }
+
 
     @Test
-    void testTitleMrs(){
-        assertEquals("Mrs", myPassenger.title());
-    }
-
-    @Test
-    void testTitleMs(){
-        assertEquals("Ms", myPassenger.title());
+    void testTitle(){
+        assertEquals("Mr", title.title("Mr"));
     }
 
     @Test
     void testTitleFail(){
-        assertEquals("Miss", myPassenger.title());
+        Exception msgTitle = assertThrows(IllegalArgumentException.class, () -> {title.title("Miss");});
+        assertEquals("either you are a married man or woman....or you are single....no in betweens", msgTitle.getMessage());
+
     }
 
     @Test
     void testAge(){
-        assertEquals(20, myPassenger.age());
+        assertEquals(20, age.age(20));
+    }
+
+    @Test
+    void testAgeFail(){
+        Exception msgAge = assertThrows(IllegalArgumentException.class, () -> {age.age(16);});
+        assertEquals("What are you doing here you are too young for this....get lost", msgAge.getMessage());
     }
 
     @Test
     void testpNum(){
-        assertEquals("0892448588", myPassenger.pNum());
+        assertEquals("0892448588", num.pNum("0892448588"));
+    }
+
+    @Test
+    void testpNumFail(){
+        Exception msgNum = assertThrows(IllegalArgumentException.class, () -> {num.pNum("123456");});
+        assertEquals("I cant call you with that number...enter it properly....basic stuff", msgNum.getMessage());
     }
 
     @Test
     void testID(){
-        assertEquals("G0038350700", myPassenger.ID());
+        assertEquals("G0038350700", id.ID("G0038350700"));
+    }
+
+    @Test
+    void testIDFail(){
+        Exception msgID = assertThrows(IllegalArgumentException.class, () -> {id.ID("123456789");});
+        assertEquals("Either you enter the correct ID or you leave...simple math", msgID.getMessage());
     }
 
 }

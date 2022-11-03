@@ -3,66 +3,58 @@ package ie.atu.assignment_1;
 // create a maven project
 
 public class Passenger {
-    private String title;
-    private String Name;
-    private String pNum;
-    private int age;
-    private String ID;
 
-    public Passenger(String title, String Name, String pNum, int age, String ID) {
-        this.title = title;
-        this.Name = Name;
-        this.pNum = pNum;
-        this.age = age;
-        this.ID = ID;
-    }
-
-    public String title(){
+    public String title(String t){
+        String title = t;
         if(title == "Mr" || title == "Mrs" || title == "Ms" ){
-            this.title = title;
+            System.out.printf(title + " ");
         }
         else{
-            throw new IllegalArgumentException("This is not a valid Title. ");
+            throw new IllegalArgumentException("either you are a married man or woman....or you are single....no in betweens");
         }
         return title;
     }
 
-    public String Name(){
+    public String Name(String n){
+        String Name = n;
         if(Name.length() > 3){
-            this.Name = Name;
+            System.out.printf(Name + "\n");
         }
         else{
-            throw new IllegalArgumentException("This is not a valid Name.");
+            throw new IllegalArgumentException("whose name is less 3 characters long.....you have a default name");
         }
         return Name;
     }
 
-    public String pNum(){
+    public String pNum(String num){
+        String pNum = num;
         if(pNum.length() > 7){
-            this.pNum = pNum;
+            System.out.printf("Phone Number: " + pNum + "\n");
         }
         else{
-            throw new IllegalArgumentException("This is not a valid Phone number");
+            throw new IllegalArgumentException("I cant call you with that number...enter it properly....basic stuff");
         }
         return pNum;
     }
 
-    public int age(){
+    public int age(int a){
+        int age = a;
         if(age > 16){
-            this.age = age;
+            System.out.printf("age: %d \n", age);
         }
         else{
-            throw new IllegalArgumentException("Must be over 16 to apply");
+            throw new IllegalArgumentException("What are you doing here you are too young for this....get lost");
         }
         return age;
     }
 
-    public String ID(){
+    public String ID(String id){
+        String ID = id;
         if(ID.length() > 10){
-            this.ID = ID;
+            System.out.printf("ID: " + ID);
         }
         else{
-            throw new IllegalArgumentException("This is not a valid ID");
+            throw new IllegalArgumentException("Either you enter the correct ID or you leave...simple math");
         }
         return ID;
     }
