@@ -54,8 +54,9 @@ public class Passenger {
             System.out.printf("ID: " + ID);
         }
         else{
-            throw new IllegalArgumentException("Either you enter the correct ID or you leave...simple math");
+            throw new IllegalArgumentException("Either you enter the correct ID or you leave...simple math, 10 characters");
         }
         return ID;
     }
+
 }

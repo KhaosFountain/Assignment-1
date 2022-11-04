@@ -20,7 +20,6 @@ public class PassengerTest {
         age = new Passenger();
         num = new Passenger();
         name = new Passenger();
-
     }
 
     @Test
@@ -38,6 +37,16 @@ public class PassengerTest {
     @Test
     void testTitle(){
         assertEquals("Mr", title.title("Mr"));
+    }
+
+    @Test
+    void testTitle2(){
+        assertEquals("Ms", title.title("Ms"));
+    }
+
+    @Test
+    void testTitle3(){
+        assertEquals("Mrs", title.title("Mrs"));
     }
 
     @Test
@@ -77,7 +86,7 @@ public class PassengerTest {
     @Test
     void testIDFail(){
         Exception msgID = assertThrows(IllegalArgumentException.class, () -> {id.ID("123456789");});
-        assertEquals("Either you enter the correct ID or you leave...simple math", msgID.getMessage());
+        assertEquals("Either you enter the correct ID or you leave...simple math, 10 characters", msgID.getMessage());
     }
 
 }

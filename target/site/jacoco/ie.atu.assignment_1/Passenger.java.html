@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Passenger.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment_1</a> &gt; <a href="index.source.html" class="el_package">ie.atu.assignment_1</a> &gt; <span class="el_source">Passenger.java</span></div><h1>Passenger.java</h1><pre class="source lang-java linenums">package ie.atu.assignment_1;
+
+// create a maven project
+
+<span class="fc" id="L5">public class Passenger {</span>
+
+    public String title(String t){
+<span class="fc" id="L8">        String title = t;</span>
+<span class="fc bfc" id="L9" title="All 6 branches covered.">        if(title == &quot;Mr&quot; || title == &quot;Mrs&quot; || title == &quot;Ms&quot; ){</span>
+<span class="fc" id="L10">            System.out.printf(title + &quot; &quot;);</span>
+        }
+        else{
+<span class="fc" id="L13">            throw new IllegalArgumentException(&quot;either you are a married man or woman....or you are single....no in betweens&quot;);</span>
+        }
+<span class="fc" id="L15">        return title;</span>
+    }
+
+    public String Name(String n){
+<span class="fc" id="L19">        String Name = n;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if(Name.length() &gt; 3){</span>
+<span class="fc" id="L21">            System.out.printf(Name + &quot;\n&quot;);</span>
+        }
+        else{
+<span class="fc" id="L24">            throw new IllegalArgumentException(&quot;whose name is less 3 characters long.....you have a default name&quot;);</span>
+        }
+<span class="fc" id="L26">        return Name;</span>
+    }
+
+    public String pNum(String num){
+<span class="fc" id="L30">        String pNum = num;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(pNum.length() &gt; 7){</span>
+<span class="fc" id="L32">            System.out.printf(&quot;Phone Number: &quot; + pNum + &quot;\n&quot;);</span>
+        }
+        else{
+<span class="fc" id="L35">            throw new IllegalArgumentException(&quot;I cant call you with that number...enter it properly....basic stuff&quot;);</span>
+        }
+<span class="fc" id="L37">        return pNum;</span>
+    }
+
+    public int age(int a){
+<span class="fc" id="L41">        int age = a;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if(age &gt; 16){</span>
+<span class="fc" id="L43">            System.out.printf(&quot;age: %d \n&quot;, age);</span>
+        }
+        else{
+<span class="fc" id="L46">            throw new IllegalArgumentException(&quot;What are you doing here you are too young for this....get lost&quot;);</span>
+        }
+<span class="fc" id="L48">        return age;</span>
+    }
+
+    public String ID(String id){
+<span class="fc" id="L52">        String ID = id;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if(ID.length() &gt; 10){</span>
+<span class="fc" id="L54">            System.out.printf(&quot;ID: &quot; + ID);</span>
+        }
+        else{
+<span class="fc" id="L57">            throw new IllegalArgumentException(&quot;Either you enter the correct ID or you leave...simple math, 10 characters&quot;);</span>
+        }
+<span class="fc" id="L59">        return ID;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
